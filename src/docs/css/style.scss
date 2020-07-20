@@ -1,0 +1,1280 @@
+@import './mixin.scss';
+@import './custon-ui.scss';
+//@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,700&display=swap&subset=latin-ext,vietnamese');
+
+@import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-size: 15px;
+    line-height: 26px;
+    font-family: $fontFamily;
+    font-weight: 400;
+    color: $textColor;
+    background: #EDEEF4;
+
+    .fullscreen {
+        background: #EDEEF4;
+    }
+    audio, canvas, iframe, img, svg, video {
+        vertical-align: middle;
+    }
+    img {
+        max-width: 100%;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        font-family: $fontFamily;
+        color: $headingColor;
+    }
+    a {
+        text-decoration: none;
+        transition: all .4s ease;
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    table,
+    tr,
+    td,
+    th,
+    span,
+    strong,
+    label,
+    p,
+    div,
+    .highcharts-container,
+    path,
+    text,
+    address,
+    aside {
+        font-family: $fontFamily;
+    }
+
+    .MuiInputBase-root {
+        font-family: $fontFamily;
+        color: $textColor;
+    }
+
+    .customTooltip {
+        background: $textColor;
+        padding: 20px;
+        border-radius: 5px;
+
+        li {
+            font-size: 12px;
+            line-height: 25px;
+            color: #fff;
+            position: relative;
+            padding-left: 15px;
+            font-weight: 500;
+
+            &::before {
+                height: 10px;
+                width: 10px;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #fff;
+                content: "";
+                border-radius: 50%;
+                border: 2px solid #2682C1;
+            }
+
+            &.profit {
+                &::before {
+                    border-color: #2682C1;
+                    background: #B1D0E5;
+                }
+            }
+
+            &.revenue {
+                &::before {
+                    border-color: #FBE201;
+                    background: #FFFBDC;
+                }
+            }
+
+            &.sales {
+                &::before {
+                    border-color: #8CD54A;
+                    background: #DFF2CE;
+                }
+            }
+        }
+
+        &.whiteCustomTooltip {
+            background: rgba(255, 255, 255, .45) !important;
+
+            li {
+                color: $textColor;
+
+                &.product {
+                    &::before {
+                        border: none;
+                        background: linear-gradient(180deg, rgba(137, 59, 217, 0.75) 0%, rgba(255, 255, 255, 0) 145.73%);
+                    }
+                }
+
+                &.sale {
+                    &::before {
+                        border: none;
+                        background: linear-gradient(180deg, rgba(242, 63, 97, 0.75) -14.59%, rgba(255, 255, 255, 0.75) 95.87%);
+                    }
+                }
+            }
+        }
+    }
+
+    .highcharts-credits {
+        display: none;
+    }
+
+    .tableResponsive {
+        @media (max-width: 767px) {
+            overflow: hidden;
+            overflow-x: auto;
+        }
+
+        .tableWrapper {
+            width: 100%;
+
+            @media (max-width: 767px) {
+                width: 767px;
+            }
+
+            thead {
+                tr {
+                    th {
+                        font-size: 15px;
+                        padding: 0px 20px 10px;
+                        text-align: left;
+                        font-weight: 700;
+                        color: $headingColor;
+                        line-height: 20px;
+                        border-bottom: none;
+
+                        @media (max-width: 1700px) {
+                            padding: 10px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        height: 60px;
+                        color: $textColor;
+                        padding: 0px 20px;
+                        font-size: 14px;
+                        border-bottom: none;
+
+                        @media (max-width: 1700px) {
+                            padding: 0 10px;
+                            font-size: 14px;
+                        }
+
+                        img {
+                            margin-right: 10px;
+                        }
+
+                        .tableImg {
+                            width: 45px;
+                            height: 45px;
+                            object-fit: contain;
+                        }
+
+                        a.link {
+                            color: #2A2A2D;
+                            font-weight: 500;
+
+                            &:hover {
+                                color: $baseColor;
+                            }
+                        }
+                    }
+
+                    th {
+                        text-align: left;
+                        padding: 0px 20px;
+                        font-size: 14px;
+                        color: #676B79;
+                        border-bottom: none;
+                        font-weight: 500;
+
+                        @media (max-width: 1700px) {
+                            padding: 0 10px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    &:nth-child(odd) {
+                        background: #FAFAFE;
+                    }
+                }
+            }
+
+            &.tableStriped {
+                tbody {
+                    tr {
+                        &:nth-child(odd) {
+                            background: #fafafa;
+                        }
+                    }
+                }
+            }
+
+            &.tableBorder {
+                thead {
+                    tr {
+                        th {
+                            background: transparent;
+                            border: 1px solid #f1f1f1;
+                            height: 60px;
+                            padding: 20px;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        background: transparent;
+
+                        td {
+                            border: 1px solid #f1f1f1;
+                        }
+                    }
+                }
+            }
+
+            &.tableInverse {
+                background: #424c5c;
+
+                thead {
+                    tr {
+                        background: transparent;
+
+                        th {
+                            border: 1px solid #505a6b;
+                            color: #fff !important;
+                            height: 50px;
+                            padding: 20px;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        td {
+                            border: 1px solid #505a6b;
+                            color: #98a6ad;
+                        }
+
+                        &:nth-child(odd) {
+                            background: #424c5c;
+                        }
+                    }
+                }
+            }
+
+            &.tableHoder {
+                tbody {
+                    tr {
+                        transition: all .4s ease;
+
+                        &:hover {
+                            background: #fafafa;
+                        }
+                    }
+                }
+            }
+
+            &.tableCenter {
+                thead {
+                    tr {
+                        th {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        td {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .piechartLength {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+
+        @media (max-width: 1700px) {
+            flex-wrap: wrap;
+        }
+
+        li {
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+
+            span {
+                height: 15px;
+                width: 15px;
+                display: inline-block;
+                margin-right: 5px;
+                border-radius: 50px;
+                border: 4px solid #eee;
+            }
+        }
+    }
+
+    .buttonList {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .btn {
+        color: #fff;
+        text-transform: capitalize;
+        padding: 10px 25px;
+        border: none;
+    }
+
+    .btn-submit {
+        border-radius: 5px;
+        padding: 10px 25px;
+        background: transparent;
+    }
+
+    .radius-unset {
+        border-radius: 0;
+    }
+
+    .btn-radius {
+        border-radius: 4px;
+    }
+
+    .btn-outlined {
+        border: 1px solid;
+    }
+
+    .textCenter {
+        text-align: center !important;
+    }
+
+    .btn-icon {
+        position: relative;
+        padding-left: 50px;
+
+        .icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .defaultButton {
+        color: #fff;
+        text-transform: capitalize;
+        padding: 10px 25px;
+        border: none;
+    }
+
+    .splitButton {
+        height: 40px;
+
+        button {
+            color: #fff !important;
+            text-transform: capitalize;
+        }
+    }
+
+    .apexcharts-toolbar {
+        display: none;
+    }
+
+    .tooltipWrap {
+        position: relative !important;
+        width: 100%;
+
+        .tooltip {
+            position: absolute;
+            padding: 5px 5px;
+            background: $headingColor;
+            color: #fff !important;
+            font-size: 12px;
+            line-height: 16px;
+            min-width: 130px;
+            border-radius: 3px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .4s ease;
+            z-index: 9999;
+
+            &::before {
+                position: absolute;
+                content: "";
+            }
+        }
+
+        &:hover {
+            .tooltip {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &.topTooltip {
+            .tooltip {
+                top: -35px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                &::before {
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-top: 6px solid $headingColor;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -6px;
+                }
+            }
+        }
+
+        &.rightTooltip {
+            .tooltip {
+                right: -116px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &::before {
+                    border-top: 8px solid transparent;
+                    border-right: 6px solid $headingColor;
+                    border-bottom: 8px solid transparent;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: -6px;
+                }
+            }
+        }
+
+        &.bottomTooltip {
+            .tooltip {
+                bottom: -35px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                &::before {
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-bottom: 6px solid $headingColor;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: -6px;
+                }
+            }
+        }
+
+        &.leftTooltip {
+            .tooltip {
+                left: -116px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &::before {
+                    border-top: 8px solid transparent;
+                    border-left: 6px solid $headingColor;
+                    border-bottom: 8px solid transparent;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -6px;
+                }
+            }
+        }
+    }
+
+    .popover {
+        position: relative;
+        width: 100%;
+
+        .popoverWrap {
+            position: absolute;
+            width: 250px;
+            background: #fff;
+            text-align: center;
+            z-index: 999;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .3s;
+
+            &::before {
+                position: absolute;
+                content: "";
+            }
+
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            h4 {
+                padding: 10px;
+                color: #fff !important;
+                margin-bottom: 0;
+            }
+
+            p {
+                padding: 20px;
+                color: $headingColor;
+                margin: 0;
+                border: 1px solid #e5e5e5;
+                border-top: none;
+            }
+        }
+
+        &.topPopover {
+            .popoverWrap {
+                top: -135px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                &::before {
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-top: 6px solid #e5e5e5;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -6px;
+                }
+            }
+        }
+
+        &.rightPopover {
+            .popoverWrap {
+                right: -260px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &::before {
+                    border-top: 8px solid transparent;
+                    border-right: 6px solid #e5e5e5;
+                    border-bottom: 8px solid transparent;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: -6px;
+                }
+            }
+        }
+
+        &.bottomPopover {
+            .popoverWrap {
+                bottom: -135px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                &::before {
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-bottom: 6px solid #1DAEFF;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: -6px;
+                }
+            }
+        }
+
+        &.leftPopover {
+            .popoverWrap {
+                left: -260px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &::before {
+                    border-top: 8px solid transparent;
+                    border-left: 6px solid #e5e5e5;
+                    border-bottom: 8px solid transparent;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -6px;
+                }
+            }
+        }
+    }
+
+    .modalWrapper {
+        .modalTitle {
+            background: #fafafa;
+            padding: 20px 30px;
+
+            h3 {
+                margin-bottom: 0;
+            }
+        }
+
+        .modalBody {
+            padding: 30px;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .modalFooter {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 30px;
+            border-top: 1px solid #f1f1f1;
+            flex-wrap: wrap;
+
+            button {
+                margin-left: 10px;
+                padding: 10px 30px;
+                text-transform: capitalize;
+                border: 2px solid transparent;
+
+                @media (max-width:500px) {
+                    margin-bottom: 5px;
+                }
+
+                span {
+                    color: #fff !important;
+                }
+
+                &:hover {
+                    background: transparent !important;
+                    border: 2px solid #3c54db;
+
+                    span {
+                        color: #3c54db !important;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .modalB {
+        padding: 10px 25px !important;
+    }
+
+    .switchDefault.MuiSwitch-root {
+        .switchTrack {
+            background: #f1f1f1 !important;
+            opacity: 1;
+        }
+
+        .switchChecked {
+            color: $baseColor !important;
+
+            &:hover {
+                background: #0071F520;
+            }
+
+            +.switchTrack {
+                background: $baseColor !important;
+            }
+        }
+
+        .switchBase {
+            color: $baseColor !important;
+
+            .switchThumb {
+                color: $baseColor !important;
+            }
+        }
+    }
+
+    .switchSuccess.MuiSwitch-root {
+        .switchTrack {
+            background: #f1f1f1 !important;
+            opacity: 1 !important;
+        }
+
+        .switchChecked {
+            color: #28a745 !important;
+
+            &:hover {
+                background: #28a74520;
+            }
+
+            +.switchTrack {
+                background: #28a745 !important;
+            }
+        }
+
+        .switchBase {
+            color: #28a745 !important;
+
+            .switchThumb {
+                color: #28a745 !important;
+            }
+        }
+    }
+
+    .switchDark.MuiSwitch-root {
+        .switchTrack {
+            background: #f1f1f1 !important;
+            opacity: 1;
+        }
+
+        .switchChecked {
+            color: #343a40 !important;
+
+            &:hover {
+                background: #343a4020;
+            }
+
+            +.switchTrack {
+                background: #343a40 !important;
+            }
+        }
+
+        .switchBase {
+            color: #343a40 !important;
+
+            .switchThumb {
+                color: #343a40 !important;
+            }
+        }
+    }
+
+    .switchLight.MuiSwitch-root {
+        .switchTrack {
+            background: #f1f1f1 !important;
+            opacity: 1 !important;
+        }
+
+        .switchChecked {
+            color: #f8f9fa !important;
+
+            &:hover {
+                background: #f8f9fa20;
+            }
+
+            +.switchTrack {
+                background: #f8f9fa !important;
+            }
+        }
+
+        .switchBase {
+            color: #f8f9fa !important;
+
+            .switchThumb {
+                color: #f8f9fa !important;
+            }
+        }
+    }
+
+    .switchPrimary.MuiSwitch-root {
+        .switchTrack {
+            background: #f1f1f1 !important;
+            opacity: 1 !important;
+        }
+
+        .switchChecked {
+            color: #1DAEFF !important;
+
+            &:hover {
+                background: #1DAEFF20;
+            }
+
+            +.switchTrack {
+                background: #1DAEFF !important;
+            }
+        }
+
+        .switchBase {
+            color: #1DAEFF !important;
+
+            .switchThumb {
+                color: #1DAEFF !important;
+            }
+        }
+    }
+
+    .switchSecondary.MuiSwitch-root {
+        .switchTrack {
+            background: #f1f1f1 !important;
+            opacity: 1;
+        }
+
+        .switchChecked {
+            color: #6c757d !important;
+
+            &:hover {
+                background: #6c757d20;
+            }
+
+            +.switchTrack {
+                background: #6c757d !important;
+            }
+        }
+
+        .switchBase {
+            color: #6c757d !important;
+
+            .switchThumb {
+                color: #6c757d !important;
+            }
+        }
+    }
+
+    .checkboxWrap {
+        span {
+            color: $baseColor;
+
+            svg {
+                fill: $baseColor;
+            }
+        }
+
+        &.checkDefault {
+            &.checked {
+                span {
+                    svg {
+                        fill: $baseColor;
+                    }
+                }
+            }
+        }
+
+        &.checkSuccess {
+            span {
+                svg {
+                    fill: #28a745;
+                }
+            }
+
+            &.checked {
+                span {
+                    svg {
+                        fill: #28a745;
+                    }
+                }
+            }
+        }
+
+        &.checkPrimary {
+            span {
+                svg {
+                    fill: #1DAEFF;
+                }
+            }
+
+            &.checked {
+                span {
+                    svg {
+                        fill: #1DAEFF;
+                    }
+                }
+            }
+        }
+
+        &.checkSeconday {
+            span {
+                svg {
+                    fill: #6c757d;
+                }
+            }
+
+            &.checked {
+                span {
+                    svg {
+                        fill: #6c757d;
+                    }
+                }
+            }
+        }
+
+        &.checkWarning {
+            span {
+                svg {
+                    fill: #ffc107;
+                }
+            }
+
+            &.checked {
+                span {
+                    svg {
+                        fill: #ffc107;
+                    }
+                }
+            }
+        }
+
+        &.checkDark {
+            span {
+                svg {
+                    fill: #343a40;
+                }
+            }
+
+            &.checked {
+                span {
+                    svg {
+                        fill: #343a40;
+                    }
+                }
+            }
+        }
+    }
+
+    .radioButton {
+        span {
+            svg {
+                fill: #0071F5;
+            }
+        }
+
+        &.defaultRadioButton {
+            &.radioCheckd {
+                span {
+                    svg {
+                        fill: #0071F5;
+                    }
+                }
+            }
+        }
+
+        &.successRadioButton {
+            span {
+                svg {
+                    fill: #28a745;
+                }
+            }
+
+            &.radioCheckd {
+                span {
+                    svg {
+                        fill: #28a745;
+                    }
+                }
+            }
+        }
+
+        &.primaryRadioButton {
+            span {
+                svg {
+                    fill: #1DAEFF;
+                }
+            }
+
+            &.radioCheckd {
+                span {
+                    svg {
+                        fill: #1DAEFF;
+                    }
+                }
+            }
+        }
+
+        &.secondayRadioButton {
+            span {
+                svg {
+                    fill: #6c757d;
+                }
+            }
+
+            &.radioCheckd {
+                span {
+                    svg {
+                        fill: #6c757d;
+                    }
+                }
+            }
+        }
+
+        &.warningRadioButton {
+            span {
+                svg {
+                    fill: #ffc107;
+                }
+            }
+
+            &.radioCheckd {
+                span {
+                    svg {
+                        fill: #ffc107;
+                    }
+                }
+            }
+        }
+
+        &.darkRadioButton {
+            span {
+                svg {
+                    fill: #343a40;
+                }
+            }
+
+            &.radioCheckd {
+                span {
+                    svg {
+                        fill: #343a40;
+                    }
+                }
+            }
+        }
+    }
+
+    .MuiPaper-root {
+        .MuiPickersBasePicker-container {
+            .MuiPickersToolbar-toolbar {
+                background: #0071F5;
+
+                button {
+                    &.MuiPickersToolbarButton-toolbarBtn {
+                        span {
+                            color: #fff !important;
+
+                            h6 {
+                                color: #fff !important;
+                            }
+
+                            h4,
+                            h2 {
+                                color: #fff !important;
+                            }
+                        }
+                    }
+                }
+
+                h2 {
+                    color: #fff !important;
+                }
+            }
+
+            .MuiPickersCalendar-week {
+                div {
+                    button.MuiPickersDay-daySelected {
+                        background: #0071F5;
+
+                        span {
+                            p {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .scrollarea {
+        .scrollbar-container {
+            &.vertical {
+                .scrollbar {
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+
+    .actionBtn {
+        width: 30px;
+        height: 30px;
+        min-width: 30px !important;
+        margin: 0px 2px !important;
+        color: #fff;
+    }
+
+    .textRight {
+        justify-content: flex-end;
+    }
+
+    .mr-5 {
+        margin-right: 5px;
+    }
+
+    // margin 
+    .mt-0 {
+        margin-top: 0;
+    }
+
+    .mr-10 {
+        margin-right: 10px;
+    }
+
+    .mb-16 {
+        margin-bottom: 16px;
+    }
+
+    .mt-50 {
+        margin-top: 50px;
+    }
+
+    .mt-30 {
+        margin-top: 30px;
+    }
+
+    .mb-30 {
+        margin-bottom: 30px !important;
+    }
+
+    .pt-30 {
+        padding-top: 30px;
+    }
+    .pt-10 {
+        padding-top: 10px;
+    }
+    .mt-16 {
+        margin-top: 16px;
+    }
+
+    .heightUnset {
+        min-height: unset !important;
+    }
+
+    .actions {
+        .actionBtn {
+            margin-right: 4px;
+            color: #fff;
+            background: #4bda5e;
+            min-width: unset;
+
+            &:hover {
+                background: #26bf3a;
+            }
+        }
+    }
+
+    .pregress {
+        background: #DDDDDD;
+        border-radius: 4px;
+        height: 8px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        .progressBar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            border-radius: 4px;
+        }
+    }
+
+    .tablebatch {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        box-shadow: 0px 6px 10px rgba(0, 36, 251, 0.1);
+        border-radius: 50%;
+        border: 10px solid #fff;
+        margin-bottom: -10px;
+        margin-right: 10px;
+    }
+
+    .MuiDialog-paper {
+        margin: 48px 16px;
+    }
+}
+
+.fontawesomeIconList {
+    display: flex;
+    flex-wrap: wrap;
+
+    .iconWrap {
+        min-height: 45px;
+        border: 1px solid #f1f1f1;
+        width: calc(20% - 5px);
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+        position: relative;
+        padding-left: 60px;
+        margin-right: 5px;
+        font-size: 14px;
+
+        @media (max-width:1700px) {
+            width: calc(25% - 5px);
+        }
+
+        @media (max-width:1200px) {
+            width: calc(33.33% - 5px);
+        }
+
+        @media (max-width:768px) {
+            width: calc(50% - 5px);
+        }
+
+        @media (max-width:500px) {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 5px;
+        }
+
+        i {
+            background: #f4f5f9;
+            left: 0;
+            top: 0;
+            width: 45px;
+            position: absolute;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #676B79;
+            font-size: 13px;
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-default{
+    &:hover{
+        color: #fff!important;
+    }
+}

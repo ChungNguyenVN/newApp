@@ -1,0 +1,124 @@
+.WorkflowView {
+    background-color: #fff;
+    margin-top: 15px;
+
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 10px 0 rgba(0,0,0,.14), 0 1px 15px 0 rgba(0,0,0,.12);
+  }
+.wfview{
+    padding: 12px 20px 15px;
+}
+
+.wfview_title{
+    min-height: 48px;
+    border-bottom: 1px solid #eef1f5;
+    margin-bottom: 10px;
+}
+
+.caption{
+    padding: 10px 0;
+}
+
+.caption_subject{
+    text-transform: uppercase!important;
+    color: #F6753C !important;
+    font-size: 18px !important;
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+}
+
+.wfview-body{
+    margin-top: 15px;
+}
+
+  .btn_default{
+    color: #333;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-color: #ccc;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px 10px;
+    min-width: 6em;
+  }
+
+/* .div_Row{
+      
+  } */
+
+.form_Group{
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 15px;
+    /* clear: both;
+    height: 30px; */
+}
+
+.form_Group:before{
+    content: " ";
+    display: table;
+}
+
+.form_Group:after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.control_Label{
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    /* padding-right: 15px; */
+    float: left;
+    width: 200px;
+    font-weight: bold;
+}
+
+.div_Form_Input{
+    position: relative;
+    min-height: 1px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    min-height: 24px;
+    float: left;
+    width: 50%;
+}
+
+.form_Text{
+    position: relative;
+    min-height: 1px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    /* height: 30px; */
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 7px;
+    padding-left: 10px;
+}
+
+
+.form_Input{
+    position: relative;
+    min-height: 1px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    min-height: 24px;
+    float: left;
+    width: 99.5%;
+}
+
+.form_Select{
+    position: relative;
+    min-height: 1px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    height: 30px;
+    float: left;
+    width: 100%;
+}
+
+.form_CheckBox{
+    margin: 5px 5px 5px 0px;
+}

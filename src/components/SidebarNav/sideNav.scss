@@ -1,0 +1,438 @@
+@import '../../docs/css/mixin.scss';
+.bgWhite {
+    background: $colorWhite;
+}
+
+
+.sidebarMainWrapper {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    position: relative;
+    background: $colorWhite;
+    transition: all .4s ease-in-out 0s;
+    .colupsMenuSidebar {
+        display: none;
+
+        @media (max-width:991px) {
+            display: flex;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 0px;
+            top: 0;
+            z-index: 111;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width:1440px) {
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+    }
+
+    @media (max-width:991px) {
+        position: fixed;
+        z-index: 111;
+        left: 0;
+        background: #EAE8F7;
+        height: 100%;
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+        left: -250px;
+        transition: all .4s ease-in-out 0s;
+        &.openMenu {
+            left: 0;
+            transition: all .4s ease-in-out 0s;
+        }
+        &.closeMenu {
+            left: -230px;
+        }
+    }
+
+    .sidebarWrap {
+        position: fixed;
+        width: 280px;
+        min-width: 280px;
+        max-width: 280px;
+
+        @media (max-width:1440px) {
+            width: 250px;
+            min-width: 250px;
+            max-width: 250px;
+        }
+
+    }
+
+}
+.mnuMobile {
+    
+    display: none;
+    @media (max-width:991px) {
+        display: flex;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 35px;
+        left: 30px;
+        z-index: 9;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.logo {
+    padding: 30px 30px 0;
+    background: #fff;
+    @media (max-width:1279px) {
+        padding: 30px 20px;
+    }
+
+    a {
+        display: inline-block;
+        height: 45px;
+
+        img {
+            padding: 10px;
+            &.colupsLogo {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.sidebarMenu {
+    height: calc(100vh - 35px);
+    background: #ffffff;
+    padding-bottom: 80px;
+    a {
+        color: $textColor;
+        
+        &:hover {
+            color: $hoverLink;
+        }
+        &.activeMnu {
+            color: $hoverLink;
+        }
+    }
+    .MuiTypography-body1 {
+        font-family: $fontFamily;
+    }
+    .subMenu {
+        a {
+            display: block;
+            padding: 5px 0;
+            &.active {
+                color: $hoverLink;
+            }
+        }
+    }
+    .menuLabel {
+        display: block;
+        font-size: 18px;
+        color: $headingColor;
+        margin-bottom: 20px;
+        font-weight: 500;
+        padding: 0px 40px;
+
+        @media (max-width:1279px) {
+            font-size: 16px;
+            padding: 0px 20px;
+        }
+    }
+
+    .itemMenu {
+        display: inline-block;
+        margin-left: 10px;
+        vertical-align: bottom;
+        
+        &.activeSub {
+            color: $hoverLink
+        }
+    }
+
+    .navItems {
+        min-height: 45px;
+        width: 100%;
+        box-shadow: none;
+        background: transparent;
+        padding-right: 20px;
+
+        &::before {
+            display: none;
+        }
+
+        .navItemsText {
+            padding: 0;
+            min-height: 50px;
+
+            .navItemsTextContent {
+                font-style: normal;
+                font-weight: normal;
+                padding-left: 30px;
+                margin: 20px 0;
+
+                span {
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #6F7E92;
+                }
+
+                .icon {
+                    width: 18px;
+                    display: block;
+                    position: relative;
+                    margin-right: 10px;
+
+                    img {
+                        position: absolute;
+                        max-width: 100%;
+
+                        &.hover {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+
+            .navItemsTextIcon {
+                span {
+                    font-size: 20px;
+                    color: #65768A;
+                }
+            }
+        }
+
+        .navItemsTextExpanded {
+            padding: 0;
+            margin: 0;
+        }
+
+        &.navItemsExpanded {
+            margin: 0 !important;
+        }
+
+        .submenu {
+            li {
+                a.navItem {
+                    display: block;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #6F7E92;
+                    padding: 15px 0;
+                    padding-left: 58px;
+
+                    position: relative;
+                    z-index: 1;
+
+                    &:hover {
+                        color: #384883;
+                    }
+
+                    &.active {
+                        color: #384883;
+                        background: linear-gradient(90.74deg, rgba(56, 72, 131, 0.22) 0.15%, rgba(255, 255, 255, 0) 99.93%);
+                    }
+
+                    .value {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: #fff;
+                        height: 20px;
+                        min-width: 35px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 20px;
+                    }
+                }
+
+                .navItems {
+                    padding-left: 28px;
+                    padding-right: 0;
+                    min-height: unset;
+                    margin-bottom: 15px;
+
+                    .navItemsText {
+                        min-height: unset;
+                    }
+
+                    .navItemsTextContent {
+                        margin: 0;
+                    }
+
+                    .navItemsTextIcon {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+
+            .thirdmenuItems {
+                li {
+                    a {
+                        display: block;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #878AA0;
+                        padding: 8px 0;
+                        padding-left: 40px;
+                        border-right: 5px solid transparent;
+
+                        &:hover {
+                            color: #1A226D;
+                        }
+
+                        &.active {
+                            border-color: #1A226D;
+                            color: #1A226D;
+                            background: rgba(59, 83, 219, 0.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.MuiButton-label {
+    font-size: 13px;
+}
+.ListTypeRequest{
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+/*
+ * Container style
+ */
+ .ps {
+    overflow: hidden !important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+  }
+  
+  /*
+   * Scrollbar rail styles
+   */
+  .ps__rail-x {
+    display: none;
+    opacity: 0;
+    transition: background-color .2s linear, opacity .2s linear;
+    -webkit-transition: background-color .2s linear, opacity .2s linear;
+    height: 15px;
+    /* there must be 'bottom' or 'top' for ps__rail-x */
+    bottom: 0px;
+    /* please don't change 'position' */
+    position: absolute;
+  }
+  
+  .ps__rail-y {
+    display: none;
+    opacity: 0;
+    transition: background-color .2s linear, opacity .2s linear;
+    -webkit-transition: background-color .2s linear, opacity .2s linear;
+    width: 15px;
+    /* there must be 'right' or 'left' for ps__rail-y */
+    right: 0;
+    /* please don't change 'position' */
+    position: absolute;
+  }
+  
+  .ps--active-x > .ps__rail-x,
+  .ps--active-y > .ps__rail-y {
+    display: block;
+    background-color: transparent;
+  }
+  
+  .ps:hover > .ps__rail-x,
+  .ps:hover > .ps__rail-y,
+  .ps--focus > .ps__rail-x,
+  .ps--focus > .ps__rail-y,
+  .ps--scrolling-x > .ps__rail-x,
+  .ps--scrolling-y > .ps__rail-y {
+    opacity: 0.6;
+  }
+  
+  .ps .ps__rail-x:hover,
+  .ps .ps__rail-y:hover,
+  .ps .ps__rail-x:focus,
+  .ps .ps__rail-y:focus,
+  .ps .ps__rail-x.ps--clicking,
+  .ps .ps__rail-y.ps--clicking {
+    background-color: #eee;
+    opacity: 0.9;
+  }
+  
+  /*
+   * Scrollbar thumb styles
+   */
+  .ps__thumb-x {
+    background-color: #aaa;
+    border-radius: 6px;
+    transition: background-color .2s linear, height .2s ease-in-out;
+    -webkit-transition: background-color .2s linear, height .2s ease-in-out;
+    height: 6px;
+    /* there must be 'bottom' for ps__thumb-x */
+    bottom: 2px;
+    /* please don't change 'position' */
+    position: absolute;
+  }
+  
+  .ps__thumb-y {
+    background-color: #aaa;
+    border-radius: 6px;
+    transition: background-color .2s linear, width .2s ease-in-out;
+    -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+    width: 6px;
+    /* there must be 'right' for ps__thumb-y */
+    right: 2px;
+    /* please don't change 'position' */
+    position: absolute;
+  }
+  
+  .ps__rail-x:hover > .ps__thumb-x,
+  .ps__rail-x:focus > .ps__thumb-x,
+  .ps__rail-x.ps--clicking .ps__thumb-x {
+    background-color: #999;
+    height: 11px;
+  }
+  
+  .ps__rail-y:hover > .ps__thumb-y,
+  .ps__rail-y:focus > .ps__thumb-y,
+  .ps__rail-y.ps--clicking .ps__thumb-y {
+    background-color: #999;
+    width: 11px;
+  }
+  
+  /* MS supports */
+  @supports (-ms-overflow-style: none) {
+    .ps {
+      overflow: auto !important;
+    }
+  }
+  
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .ps {
+      overflow: auto !important;
+    }
+  }
+  .scrollbar-container {
+    position: relative;
+    height: 100%; }
+  
+  /*# sourceMappingURL=styles.css.map*/

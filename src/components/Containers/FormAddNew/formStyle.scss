@@ -1,0 +1,28 @@
+.formControl{
+    label{
+        display: block;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+        font-size: 14px;
+    }
+    .textField{
+        background: #f3f4f8;
+        fieldset{
+            border: 1px solid #f1f1f1;
+        }
+        &:hover{
+            fieldset{
+                border-color:#e5e5e5;
+            }
+        }
+    }
+}
+
+textarea {
+    width: 100%;
+    max-height: 80px;
+    border-radius: 5px;
+    resize: none;
+    font: inherit;
+    color: currentColor
+}

@@ -1,0 +1,118 @@
+
+  .step-menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+	list-style: none;
+	margin-bottom: 30px;
+    }
+    .nameProgress {
+        display: block;
+		position: absolute;
+		bottom: -26px;
+		color: #333;
+		width: 100%;
+		left: 0;
+		text-align: center;
+		font-weight: 600;
+    }
+    .step-menu li {
+		box-sizing: border-box; 
+		flex-basis: 0;
+        flex-grow: 1;
+        text-align: center;
+		background: #1AB8D2;
+		height: 50px;
+		text-align: center;
+		padding: 15px 15px 15px 50px;
+		position: relative;
+		margin-left: 10px;
+    color: white;
+    width: 95%;
+      &:last-child {
+        margin-right: 20px;
+      }
+      @media (max-width: 991px) {
+        display: block;
+        flex-basis: auto;
+        margin-left: 0;
+        margin-bottom: 10px;
+        margin-right: 15px;
+        padding-left: 0 !important;
+        .nameProgress {
+          display: none;
+        }
+      }
+    }
+      .step-menu li:before {
+        content: '';
+        position: absolute;
+        border: 25px solid transparent;
+        border-left-color: #fff;
+        top:0px;
+        right: -60px;
+      }
+      .step-menu li:after {
+        content: '';
+        position: absolute;
+        border: 25px solid transparent;
+        border-left-color: #1AB8D2;
+        top:0px;
+        right: -50px;
+      }
+      .step-menu li:nth-child(1) {
+        z-index:80;
+        margin-left: 0;
+        padding-left: 30px
+      }
+      .step-menu li:nth-child(2) {
+        z-index:79;
+      }
+      .step-menu li:nth-child(3) {
+        z-index:78;
+      }
+      .step-menu li:nth-child(4) {
+        z-index:77;
+      }
+      .step-menu li:nth-child(5) {
+        z-index:76;      
+	  }
+	  
+      .step-menu li:nth-child(6) {
+        z-index:75;      
+	  }
+	  
+      .step-menu li:nth-child(7) {
+        z-index:74;      
+	  }
+	  
+      .step-menu li:nth-child(8) {
+        z-index:73;      
+	  }
+	  
+      .step-menu li:nth-child(9) {
+        z-index:72;      
+      }
+      .step-menu li:nth-child(10) {
+        z-index:71;
+        padding-right:30px
+      }
+      .step-menu li:nth-child(11):after,
+      .step-menu li:nth-child(11):before {
+        border: none;
+      }
+  .step-menu li.current {
+    background:#DFA100;
+    color: white;
+  }
+  .step-menu li.current:after {
+    border-left-color: #DFA100;
+  }
+  .step-menu li.complete {
+    background: #34c38f;
+    color: white;
+  }
+  .step-menu li.complete:after {
+    border-left-color: #34c38f;
+  }
