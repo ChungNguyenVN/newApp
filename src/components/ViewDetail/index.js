@@ -15,6 +15,7 @@ import WfAttach from "../VerticalLayout/wfAttach";
 import LinkToWorkflow from "../ViewDetail/linkWf";
 import AddNew from "../ViewDetail/formAddNew";
 
+import Breadcrumbs from '../Breadcrumb/Breadcrumb';
 
 
 class LayoutDetail extends Component {
@@ -28,7 +29,7 @@ class LayoutDetail extends Component {
   render() {
     return (
         <React.Fragment>
-
+            <Breadcrumbs title="Trang chủ" breadcrumbItem="Chi tiết yêu cầu" className="mt-5" />
             <Row>
                 <Col lg="12">
                     <ProgressWF></ProgressWF>

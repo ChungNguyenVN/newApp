@@ -139,12 +139,15 @@ class Layout extends Component {
             <div className={this.state.showMenu ? "page-content " : "page-content vertical-collpsed"}>
               <div className="main-content">
                 <Navbar/>
-                <Breadcrumbs title="Trang chủ" breadcrumbItem="Theo dõi yêu cầu" className="mt-5" />
+                  <Breadcrumbs title="Trang chủ" breadcrumbItem="Theo dõi yêu cầu" className="mt-5" />
                 <Row>
                   
                   <Col lg="12">
                     <Filter/>
                     <Row>
+                      <Col lg="12">
+                      <Breadcrumbs title="Trang chủ" breadcrumbItem="Dashboard" className="mt-5" />
+                      </Col>
                       <MiniWidget reports={this.state.reports}/>
                     </Row>
                     <Row>
@@ -157,12 +160,14 @@ class Layout extends Component {
                     </Row>
                   </Col>
                   <Col lg="12">
-                    
+                    <Breadcrumbs title="Trang chủ" breadcrumbItem="Báo cáo" className="mt-5" />
                     <Report></Report>
                   </Col>
-				  <Col lg="12">
-				  	<LayoutDetail></LayoutDetail>
-				  </Col>
+                  <Col lg="12">
+                    
+                    
+                    <LayoutDetail></LayoutDetail>
+                  </Col>
                 </Row>
               </div>
             </div>

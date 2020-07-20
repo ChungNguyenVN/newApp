@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  Row, Col, Card,CardHeader, CardBody, CardTitle, CardText } from "reactstrap";
-
+import Breadcrumbs from '../Breadcrumb/Breadcrumb';
 class AddNew extends Component {
     constructor(props) {
         super(props);
@@ -9,6 +9,7 @@ class AddNew extends Component {
     render(){
         return(
             <React.Fragment>
+                <Breadcrumbs title="Trang chủ" breadcrumbItem="Tạo mới qui trình" className="mt-5" />
                 <Card>
                     <CardHeader className="bg-transparent">
                         <h5 className="my-2">Đề xuất mua hàng</h5>
