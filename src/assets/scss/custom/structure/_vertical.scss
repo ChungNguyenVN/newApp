@@ -191,7 +191,7 @@
         left: $sidebar-collapsed-width;
     }
     .mm-active {
-        text-align: center;
+        // text-align: center;
     }
     .navbar-brand-box {
         width: $sidebar-collapsed-width !important;
@@ -275,10 +275,11 @@
                     &:hover {
                         > a {
                             position: relative;
-                            width: calc(190px + #{$sidebar-collapsed-width});
+                            width: calc(250px + #{$sidebar-collapsed-width});
                             color: $primary;
                             background-color: darken($sidebar-bg, 4%);
                             transition: none;
+                            text-align: center;
 
                             i{
                                 color: $primary;
@@ -293,7 +294,7 @@
                             display: block;
                             left: $sidebar-collapsed-width;
                             position: absolute;
-                            width: 190px;
+                            width: 250px;
                             height: auto !important;
                             box-shadow: 3px 5px 10px 0 rgba(54, 61, 71, .1);
 
@@ -305,7 +306,7 @@
                                 box-shadow: none;
                                 padding: 8px 20px;
                                 position: relative;
-                                width: 190px;
+                                width: 250px;
                                 z-index: 6;
                                 color: $sidebar-menu-sub-item-color;
 
