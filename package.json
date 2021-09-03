@@ -74,7 +74,7 @@
         "chart.js": "^2.9.3",
         "eslint-import-resolver-alias": "^1.1.2",
         "font-awesome": "^4.7.0",
-        "immer": "^6.0.2",
+        "immer": "^9.0.6",
         "mdbreact": "^4.27.0",
         "metismenujs": "^1.2.1",
         "moment": "^2.24.0",
